@@ -53,6 +53,7 @@ script:
         ./make.bat -msvc
       fi
 
+      ./v.exe test base64
       ./v.exe test v
       set +e
     fi
@@ -60,6 +61,7 @@ script:
     if [[ "${TRAVIS_OS_NAME}" != "windows" ]]; then
       make
       ./v -o v v.v
+      ./v test base64
       ./v test v
     fi
   - |
